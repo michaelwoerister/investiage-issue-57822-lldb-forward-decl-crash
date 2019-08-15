@@ -1,0 +1,1536 @@
+mw@localhost llvm-build]$ ./bin/lldb
+(lldb) attach 7100
+Process 7100 stopped
+* thread #1, name = 'GPU Process', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978bff05c7 libc.so.6`__GI___poll + 87
+libc.so.6`__GI___poll:
+->  0x7f978bff05c7 <+87>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978bff05cd <+93>: ja     0x7f978bff05fa            ; <+138>
+    0x7f978bff05cf <+95>: movl   %r8d, %edi
+    0x7f978bff05d2 <+98>: movl   %eax, 0x8(%rsp)
+  thread #2, name = 'Chrome_~dThread', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978bff5fad libc.so.6`syscall + 29
+libc.so.6`syscall:
+->  0x7f978bff5fad <+29>: cmpq   $-0xfff, %rax             ; imm = 0xF001
+    0x7f978bff5fb3 <+35>: jae    0x7f978bff5fb6            ; <+38>
+    0x7f978bff5fb5 <+37>: retq
+    0x7f978bff5fb6 <+38>: movq   0xc9eab(%rip), %rcx
+  thread #3, name = 'Compositor', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #4, name = 'gmain', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978bff05c7 libc.so.6`__GI___poll + 87
+libc.so.6`__GI___poll:
+->  0x7f978bff05c7 <+87>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978bff05cd <+93>: ja     0x7f978bff05fa            ; <+138>
+    0x7f978bff05cf <+95>: movl   %r8d, %edi
+    0x7f978bff05d2 <+98>: movl   %eax, 0x8(%rsp)
+  thread #5, name = 'gdbus', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978bff05c7 libc.so.6`__GI___poll + 87
+libc.so.6`__GI___poll:
+->  0x7f978bff05c7 <+87>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978bff05cd <+93>: ja     0x7f978bff05fa            ; <+138>
+    0x7f978bff05cf <+95>: movl   %r8d, %edi
+    0x7f978bff05d2 <+98>: movl   %eax, 0x8(%rsp)
+  thread #6, name = 'Renderer', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #7, name = 'WRWorker#0', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #8, name = 'WRWorker#1', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #9, name = 'WRWorker#2', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #10, name = 'WRWorker#3', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #11, name = 'WRWorker#4', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #12, name = 'WRWorker#5', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #13, name = 'WRWorker#6', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #14, name = 'WRWorker#7', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #15, name = 'Timer', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c43383c libpthread.so.0`__pthread_cond_timedwait + 652
+libpthread.so.0`__pthread_cond_timedwait:
+->  0x7f978c43383c <+652>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c433842 <+658>: ja     0x7f978c4339d8            ; <+1064>
+    0x7f978c433848 <+664>: movl   %r8d, %edi
+    0x7f978c43384b <+667>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #16, name = 'ProfilerChild', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #17, name = 'WRScene~ilder#1', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #18, name = 'WRScene~derLP#1', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+  thread #19, name = 'WRRende~ckend#1', stop reason = signal SIGSTOP
+    frame #0: 0x00007f978c4334d5 libpthread.so.0`__pthread_cond_wait + 501
+libpthread.so.0`__pthread_cond_wait:
+->  0x7f978c4334d5 <+501>: cmpq   $-0x1000, %rax            ; imm = 0xF000
+    0x7f978c4334db <+507>: ja     0x7f978c433540            ; <+608>
+    0x7f978c4334dd <+509>: movl   %r9d, %edi
+    0x7f978c4334e0 <+512>: callq  0x7f978c436890            ; __pthread_disable_asynccancel
+
+Executable module set to "/xoxo/gecko/obj-x86_64-pc-linux-gnu/dist/bin/firefox".
+Architecture set to: x86_64-unknown-linux-gnu.
+(lldb) break set -n create_frame_builder
+Breakpoint 1: where = libxul.so`webrender::display_list_flattener::DisplayListFlattener::create_frame_builder::h34db85edaa811d9a + 70 at display_list_flattener.rs:282:31, address = 0x00007f9787137686
+(lldb) c
+Process 7100 resuming
+(lldb) ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+GetCompleteQualType - cxx_record_decl->hasExternalLexicalStorage()
+GetCompleteQualType - (external_ast_source)
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (cxx_record_decl->isCompleteDefinition())
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Process 7100 stopped
+* thread #17, name = 'WRScene~ilder#1', stop reason = breakpoint 1.1
+    frame #0: 0x00007f9787137686 libxul.so`webrender::display_list_flattener::DisplayListFlattener::create_frame_builder::h34db85edaa811d9a(scene=0x00007f9763a2e020, clip_scroll_tree=0x00007f97632b5f48, font_instances=Arc<std::sync::rwlock::RwLock<std::collections::hash::map::HashMap<webrender_api::font::FontInstanceKey, alloc::sync::Arc<webrender::glyph_rasterizer::BaseFontInstance>, core::hash::BuildHasherDefault<fxhash::FxHasher>>>> @ 0x00007f97632b4a50, view=0x00007f97632b5f20, output_pipelines=0x00007f97632b5ef8, frame_builder_config=0x00007f97632b9160, new_scene=0x00007f97632b5fe0, interners=0x00007f9763a2e080, doc_stats=0x00007f9763a2e7d0) at display_list_flattener.rs:282:31
+   279          doc_stats: &DocumentStats,
+   280      ) -> FrameBuilder {
+   281          // We checked that the root pipeline is available on the render backend.
+-> 282          let root_pipeline_id = scene.root_pipeline_id.unwrap();
+   283          let root_pipeline = scene.pipelines.get(&root_pipeline_id).unwrap();
+   284
+   285          let background_color = root_pipeline
+(lldb) bt
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+error: need to add support for DW_TAG_base_type '()' encoded with DW_ATE = 0x7, bit_size = 0
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+GetCompleteQualType - cxx_record_decl->hasExternalLexicalStorage()
+GetCompleteQualType - (external_ast_source)
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (cxx_record_decl->isCompleteDefinition())
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+GetCompleteQualType - cxx_record_decl->hasExternalLexicalStorage()
+GetCompleteQualType - (external_ast_source)
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+Type::isIncompleteType - switch Builtin
+GetCompleteQualType - (cxx_record_decl->isCompleteDefinition())
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+error: need to add support for DW_TAG_base_type '()' encoded with DW_ATE = 0x7, bit_size = 0
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+GetCompleteQualType - cxx_record_decl->hasExternalLexicalStorage()
+GetCompleteQualType - (external_ast_source)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = false)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = false)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = false)
+error: libxul.so DWARF DIE at 0x1d409e77 (class closure) has a member variable 0x1d409e7e (__0) whose type is a forward declaration, not a complete definition.
+Try compiling the source file with -fstandalone-debug
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - switch 10
+GetCompleteQualType - final return
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+Type::isIncompleteType - switch default
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+CompilerType::GetCompleteType
+CompilerType::GetCompleteType - valid
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+Type::isIncompleteType - switch Record
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (cxx_record_decl->isCompleteDefinition())
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+ClangASTContext::GetCompleteType - go
+GetCompleteQualType - switch 2
+GetCompleteQualType - cxx_record_decl
+Type::isIncompleteType - switch Record
+GetCompleteQualType - (isCompleteType = true)
+  #0 0x0000000000325989 llvm::sys::PrintStackTrace(llvm::raw_ostream&) /xoxo/llvm-project/llvm/lib/Support/Unix/Signals.inc:532:11
+  #1 0x0000000000325b39 PrintStackTraceSignalHandler(void*) /xoxo/llvm-project/llvm/lib/Support/Unix/Signals.inc:593:1
+  #2 0x00000000003243a6 llvm::sys::RunSignalHandlers() /xoxo/llvm-project/llvm/lib/Support/Signals.cpp:67:5
+  #3 0x000000000032629b SignalHandler(int) /xoxo/llvm-project/llvm/lib/Support/Unix/Signals.inc:384:1
+  #4 0x00007f9a23191e80 __restore_rt (/lib64/libpthread.so.0+0x12e80)
+  #5 0x00007f9a1bec9980 llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*>::PointerUnion() /xoxo/llvm-project/llvm/include/llvm/ADT/PointerUnion.h:178:3
+  #6 0x00007f9a1bec9945 llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*>::getFromOpaqueValue(void*) /xoxo/llvm-project/llvm/include/llvm/ADT/PointerUnion.h:247:49
+  #7 0x00007f9a1bec9915 llvm::PointerLikeTypeTraits<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*> >::getFromVoidPointer(void*) /xoxo/llvm-project/llvm/include/llvm/ADT/PointerUnion.h:276:12
+  #8 0x00007f9a1bec98e9 llvm::PointerIntPairInfo<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*>, 3u, llvm::PointerLikeTypeTraits<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*> > >::getPointer(long) /xoxo/llvm-project/llvm/include/llvm/ADT/PointerIntPair.h:166:12
+  #9 0x00007f9a1bec9878 llvm::PointerIntPair<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*>, 3u, unsigned int, llvm::PointerLikeTypeTraits<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*> >, llvm::PointerIntPairInfo<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*>, 3u, llvm::PointerLikeTypeTraits<llvm::PointerUnion<clang::Type const*, clang::ExtQuals const*> > > >::getPointer() const /xoxo/llvm-project/llvm/include/llvm/ADT/PointerIntPair.h:58:41
+ #10 0x00007f9a1bec9825 clang::QualType::isNull() const /xoxo/llvm-project/llvm/../clang/include/clang/AST/Type.h:709:18
+ #11 0x00007f9a1bec9799 clang::QualType::getCommonPtr() const /xoxo/llvm-project/llvm/../clang/include/clang/AST/Type.h:659:5
+ #12 0x00007f9a1bec9775 clang::QualType::getTypePtr() const /xoxo/llvm-project/llvm/../clang/include/clang/AST/Type.h:6131:26
+ #13 0x00007f9a1bec9734 clang::ASTContext::getTypeInfo(clang::QualType) const /xoxo/llvm-project/llvm/../clang/include/clang/AST/ASTContext.h:2064:65
+ #14 0x00007f9a1bec9165 clang::ASTContext::getTypeSize(clang::QualType) const /xoxo/llvm-project/llvm/../clang/include/clang/AST/ASTContext.h:2070:51
+ #15 0x00007f9a1c390aa6 clang::ASTContext::getCharWidth() const /xoxo/llvm-project/llvm/../clang/include/clang/AST/ASTContext.h:2075:5
+ #16 0x00007f9a2202429c (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:170:41
+ #17 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #18 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #19 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #20 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #21 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #22 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #23 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #24 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #25 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #26 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #27 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #28 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #29 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #30 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #31 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #32 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #33 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #34 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #35 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #36 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #37 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #38 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #39 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #40 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #41 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #42 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #43 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #44 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #45 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #46 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #47 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #48 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #49 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #50 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #51 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #52 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #53 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #54 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #55 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #56 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #57 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #58 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #59 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #60 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #61 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #62 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #63 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #64 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #65 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #66 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #67 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #68 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #69 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #70 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #71 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #72 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #73 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #74 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #75 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #76 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #77 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #78 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #79 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #80 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #81 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #82 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #83 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #84 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #85 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #86 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #87 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #88 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #89 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #90 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #91 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #92 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #93 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #94 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #95 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #96 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+ #97 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+ #98 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+ #99 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#100 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#101 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#102 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#103 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#104 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#105 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#106 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#107 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#108 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#109 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#110 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#111 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#112 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#113 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#114 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#115 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#116 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#117 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#118 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#119 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#120 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#121 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#122 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#123 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#124 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#125 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#126 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#127 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#128 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#129 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#130 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#131 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#132 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#133 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#134 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#135 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#136 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#137 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#138 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#139 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#140 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#141 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#142 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#143 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#144 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#145 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#146 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#147 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#148 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#149 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#150 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#151 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#152 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#153 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#154 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#155 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#156 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#157 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#158 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#159 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#160 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#161 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#162 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#163 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#164 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#165 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#166 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#167 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#168 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#169 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#170 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#171 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#172 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#173 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#174 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#175 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#176 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#177 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#178 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#179 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#180 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#181 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#182 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#183 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#184 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#185 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#186 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#187 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#188 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#189 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#190 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#191 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#192 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#193 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#194 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#195 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#196 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#197 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#198 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#199 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#200 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#201 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#202 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#203 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#204 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#205 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#206 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#207 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#208 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#209 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#210 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#211 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#212 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#213 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#214 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#215 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#216 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#217 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#218 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#219 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#220 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#221 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#222 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#223 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#224 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#225 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#226 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#227 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#228 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#229 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#230 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#231 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#232 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#233 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#234 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#235 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#236 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#237 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#238 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#239 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#240 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#241 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#242 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#243 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#244 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#245 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#246 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#247 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#248 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#249 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#250 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#251 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#252 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+#253 0x00007f9a220242e3 (anonymous namespace)::EmptySubobjectMap::EmptySubobjectMap(clang::ASTContext const&, clang::CXXRecordDecl const*) /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:172:3
+#254 0x00007f9a22023912 clang::ASTContext::getASTRecordLayout(clang::RecordDecl const*) const /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:3068:34
+#255 0x00007f9a22029c56 (anonymous namespace)::EmptySubobjectMap::ComputeEmptySubobjectSizes() /xoxo/llvm-project/clang/lib/AST/RecordLayoutBuilder.cpp:216:28
+Stack dump:
+0.  Program arguments: ./bin/lldb
+Segmentation fault (core dumped)
+[mw@localhost llvm-build]$

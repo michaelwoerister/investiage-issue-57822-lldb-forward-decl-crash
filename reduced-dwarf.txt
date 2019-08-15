@@ -1,12 +1,4 @@
-LLDB crashes with forward declaration
-=====================================
-
-Q: What does the DWARF data look like? Is it really a forward declaration?
-
-This is the error:
-`error: libxul.so DWARF DIE at 0x1d409e77 (class closure) has a member variable 0x1d409e7e (__0) whose type is a forward declaration, not a complete definition.`
-
-```
+[mw@localhost issue57822]$ rg "1d409e77" ./libxul.so.dwarf -C15
 268785456-    <1d409e47>   DW_AT_type        : <0x1d3fd173>
 268785457-    <1d409e4b>   DW_AT_alignment   : 8
 268785458-    <1d409e4c>   DW_AT_data_member_location: 0
@@ -47,4 +39,3 @@ This is the error:
 268785493-    <1d409e90>   DW_AT_alignment   : 8
 268785494- <2><1d409e91>: Abbrev Number: 6 (DW_TAG_member)
 268785495-    <1d409e92>   DW_AT_name        : (indirect string, offset: 0xabe2486): __0
-```
